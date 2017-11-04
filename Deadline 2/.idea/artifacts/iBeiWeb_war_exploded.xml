@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="iBeiWeb:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/iBeiWeb_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="iBeiWeb/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="iBeiWeb" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="ojdbc6" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/taglibs-standard-impl-1.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl-api-1.2.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl-1.2.1.jar" />
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="rest" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

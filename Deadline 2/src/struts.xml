@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.action.excludePattern" value="/ws"/>
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" extends="struts-default" namespace="/">
+
+        <interceptors>
+            <interceptor name="sessionInterceptor" class="interceptor.MyInterceptor"/>
+            <interceptor-stack name="sessionStack">
+                <interceptor-ref name="sessionInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="sessionStack"/>
+
+      <!--  <action name="onLoad" class="action.OnLoadAction" method="execute">
+            <result name="success">/home.jsp</result>
+            <result name="erro1">/index.jsp</result>
+        </action>
+
+        !-->
+
+        <global-results>
+            <result name="login" type="redirect">/index.jsp</result>
+        </global-results>
+
+        <!-- chamado no index.jsp -->
+        <action name="login" class="action.AuthenticationAction" method="execute">
+            <result name="true-user">/home.jsp</result>
+            <result name="true-admin">/homeAdmin.jsp</result>
+            <result name="error">/index.jsp</result>
+            <result name="redirect" type="redirect">%{authorizationUrl}</result>
+        </action>
+
+        <action name="logout" class="action.LogoutAction" method="execute">
+            <result name="success">/index.jsp</result>
+        </action>
+
+        <!-- chamado no createAuction.jsp.jsp -->
+        <action name="create" class="action.AuctionAction" method="execute">
+            <result name="success">/showAuction.jsp</result>
+            <result name="error">/home.jsp</result>
+            <result name="erro1">/index.jsp</result>
+        </action>
+
+        <!-- chamado no search.jsp -->
+        <action name="DetailAuction" class="action.DetailAuctionAction" method="execute">
+            <result name="success">/showAuction.jsp</result>
+            <result name="error">/search.jsp</result>
+            <result name="erro1">/index.jsp</result>
+        </action>
+
+        <!-- chamado no search.jsp -->
+        <action name="searchAuction" class="action.SearchAuctionAction" method="execute">
+            <result name="success">/showSearchAuction.jsp</result>
+            <result name="error">/search.jsp</result>
+            <result name="errorSession">/index.jsp</result>
+        </action>
+
+        <!-- chamado no header.jsp -->
+        <action name="myAuctions" class="action.MyAuctionsAction" method="execute">
+            <result name="success">/showMyAuctions.jsp</result>
+            <result name="error">/home.jsp</result>
+            <result name="erro1">/index.jsp</result>
+        </action>
+
+        <!-- chamado no editAuction.jsp -->
+        <action name="EditAuction" class="action.EditAuctionAction" method="execute">
+            <result name="success">/editAuction.jsp</result>
+            <result name="error">/home.jsp</result>
+            <result name="erro1">/index.jsp</result>
+        </action>
+
+        <!-- chamado no editAuction.jsp -->
+        <action name="EditAuction2" class="action.EditAuctionAction" method="edit">
+            <result name="success">/showAuction.jsp</result>
+            <result name="error">/editAuction.jsp</result>
+            <result name="erro1">/index.jsp</result>
+        </action>
+
+        <!-- chamado no banUser.jsp -->
+        <action name="banUser" class="action.AdminBanUserAction" method="execute">
+            <result name="success">/banUser.jsp</result>
+            <result name="error">/homeAdmin.jsp</result>
+            <result name="erro1">/index.jsp</result>
+        </action>
+
+        <!-- chamado no banUser.jsp -->
+        <action name="unlinkUser" class="action.AdminUnlinkUserAction" method="execute">
+            <result name="success">/unlinkUser.jsp</result>
+            <result name="error">/homeAdmin.jsp</result>
+            <result name="erro1">/index.jsp</result>
+        </action>
+
+        <action name="Stats" class="action.AdminBanUserAction" method="stats">
+            <result name="success">/homeAdmin.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="cancel" class="action.AdminCancelAuction" method="execute">
+            <result name="success">/showAuction.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="bid" class="action.BidAction" method="execute">
+            <result name="success">/showAuction.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="sendMsg" class="action.SendMsgAction" method="execute">
+            <result name="success">/showAuction.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <!-- #################### FACEBOOK #################### -->
+
+        <action name="fbLoginAction" class="action.AuthenticationAction">
+            <result name="success">/home.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="fbAssociate" class="action.fbAssociateAction">
+            <result name="error">/home.jsp</result>
+            <result name="redirect" type="redirect">%{authorizationUrl}</result>
+        </action>
+
+        <action name="fbAssociateAction" class="action.fbAssociateAction">
+            <result name="success">/home.jsp</result>
+            <result name="error">/home.jsp</result>
+        </action>
+
+    </package>
+</struts>
