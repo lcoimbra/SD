@@ -24,14 +24,14 @@ Clients communicate through command line (i.e. telnet) with protocol visible in 
 Clients can use both the command line and a web interface where they can now use a Facebook account to register and login.
 
 * Web Server with MVC architecture:
- * Java Servlets;
- * Struts 2;
- * JSP;
- * JavaBeans;
- * Websockets.
+  * Java Servlets;
+  * Struts 2;
+  * JSP;
+  * JavaBeans;
+  * Websockets.
 * REST
- * Facebook - register/log in and post on profile.
- * eBay - search items and show lowest price.
+  * Facebook - register/log in and post on profile.
+  * eBay - search items and show lowest price.
 
 ## To run
 * Get database;
