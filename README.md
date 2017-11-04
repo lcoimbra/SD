@@ -10,17 +10,17 @@ Luís Silva - lfgsilva@student.dei.uc.pt
 <br>
 <br>
 A project about inverted auctions, where the lowest bid wins.<br>
-First deadline following a Client-Server architecture and the second deadline adding a web interface following a MVC architecture.<br>
+The first milestone following a Client-Server architecture and the second milestone adding a web interface following a MVC architecture.<br>
 Technologies and a more detailed description of the project below.
 
-## Deadline 1
+## Milestone 1
 Clients communicate through command line (i.e. telnet) with protocol visible in sd_projecto_meta1_v4.pdf.
 
 * SQL Database - SQL script inside folder (db_script.sql).
 * RMI Servers with fail over, first online is the main one, the rest is backup - Servers responsible for communicating with the database.
 * TCP Servers, communicating between them using multicast - Receive client commands, execute methods on RMI, has interface to enable RMI callbacks.
 
-## Deadline 2
+## Milestone 2
 Clients can use both the command line and a web interface where they can now use a Facebook account to register and login.
 
 * Web Server with MVC architecture:
