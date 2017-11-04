@@ -7,7 +7,8 @@ João Feliciano - jamaia@student.dei.uc.pt
 Luís Coimbra - lcoimbra@student.dei.uc.pt
 <br>
 Luís Silva - lfgsilva@student.dei.uc.pt
-
+<br>
+<br>
 A project about inverted auctions, where the lowest bid wins.<br>
 First deadline following a Client-Server architecture and the second deadline adding a web interface following a MVC architecture.<br>
 Technologies and a more detailed description of the project below.
